@@ -46,6 +46,8 @@ var dataTable= new google.visualization.DataTable();
       <a href="/ambient.php">ambient</a>
       <a href="/pressure.php">pressure</a>
       <a href="/objectTemp.php">object temperature</a>
-    <div id='chart_div' style='width: 100%; height: 500px;'></div>
+      <a href="/magnet.php">Magnetic Field</a>
+<!--       <a href="/light.php">Light</a>
+ -->    <div id='chart_div' style='width: 100%; height: 500px;'></div>
   </body>
 </html>
