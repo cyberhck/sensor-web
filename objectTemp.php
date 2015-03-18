@@ -1,6 +1,6 @@
 <?php
    $con = new SQLite3('sensor.db');
-   $query =  "SELECT * FROM humidity;";
+   $query =  "SELECT * FROM objectTemp;";
    $result=$con->query($query);
    $a=array();
    $i=0;
@@ -12,7 +12,7 @@
       $date=explode(":", $date);
       $time=explode(":", $time);
       $a[$i]='[new Date("'.$date[1]."/".$date[0]."/".$date[2]." ".$time[0].":".$time[1].":".$time[2];
-      $a[$i]=$a[$i].'"),'.$data["humidity"].']';
+      $a[$i]=$a[$i].'"),'.$data["temperature"].']';
       $i++;
    }
    $b=implode(",\n", $a);    
@@ -26,7 +26,7 @@
       function drawChart() {
 var dataTable= new google.visualization.DataTable();
         dataTable.addColumn('datetime', 'Time');
-        dataTable.addColumn('number', 'Humidity');
+        dataTable.addColumn('number', 'Temperature');
         dataTable.addRows([
          <?php echo $b; ?>
       ]);
@@ -43,9 +43,6 @@ var dataTable= new google.visualization.DataTable();
   </head>
 
   <body>
-      <a href="/ambient.php">ambient</a>
-      <a href="/pressure.php">pressure</a>
-      <a href="/objectTemp.php">object temperature</a>
     <div id='chart_div' style='width: 100%; height: 500px;'></div>
   </body>
 </html>
