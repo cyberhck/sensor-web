@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['annotationchart']}]}"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {'packages':['annotationchart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+var dataTable= new google.visualization.DataTable();
+        dataTable.addColumn('datetime', 'Year');
+        dataTable.addColumn('number', 'Humidity');
+        dataTable.addRows([
+      [new Date("6/22/2009 16:00:00"),425],
+      [new Date("6/8/2009 16:00:03"),424],
+      [new Date("5/26/2009 16:00:06"),417],
+      [new Date("5/11/2009 16:00:07"),390],
+      [new Date("4/27/2009 16:00:07"),393],
+      [new Date("4/13/2009 16:00:09"),392],
+      [new Date("3/30/2009 16:00:10"),369],
+      [new Date("3/16/2009 16:00:20"),330],
+      [new Date("3/2/2009 16:01:00"),308],
+      [new Date("2/17/2009 16:02:00"),346],
+      [new Date("2/2/2009 16:03:00"),371],
+      [new Date("1/20/2009 16:05:00"),324],
+      [new Date("1/5/2009 16:07:00"),315],
+      [new Date("12/22/2008 16:08:00"),300],
+      [new Date("12/8/2008 16:09:00"),315],
+      [new Date("11/24/2008 16:00:00"),292],
+      [new Date("11/10/2008 17:00:00"),310],
+      [new Date("10/27/2008 18:00:00"),359],
+      [new Date("10/13/2008 16:00:00"),372],
+      [new Date("9/29/2008 16:00:00"),386],
+      [new Date("9/15/2008 16:00:00"),449],
+      [new Date("9/2/2008 16:00:00"),444],
+      [new Date("8/25/2008 16:00:00"),463],
+      [new Date("8/11/2008 16:00:00"),510],
+      [new Date("7/28/2008 16:00:00"),467],
+      [new Date("7/14/2008 16:00:00"),481],
+      [new Date("6/30/2008 16:00:00"),537],
+      [new Date("6/16/2008 16:00:00"),546],
+      [new Date("6/2/2008 16:00:00"),567],
+      [new Date("5/19/2008 16:00:00"),544],
+      [new Date("5/5/2008 16:00:00"),573],
+      [new Date("4/21/2008 16:00:00"),544],
+      [new Date("4/7/2008 16:00:00"),457],
+      [new Date("3/24/2008 16:00:00"),438],
+      [new Date("3/10/2008 16:00:00"),437],
+      [new Date("2/25/2008 16:00:00"),471],
+      [new Date("2/11/2008 16:00:00"),529],
+      [new Date("1/28/2008 16:00:00"),515],
+      [new Date("1/14/2008 16:00:00"),600],
+      [new Date("12/31/2007 16:00:00"),657],
+      [new Date("12/17/2007 16:00:00"),696],
+      [new Date("12/3/2007 16:00:00"),714],
+      [new Date("11/19/2007 16:00:00"),676],
+      [new Date("11/5/2007 16:00:00"),663],
+      [new Date("10/22/2007 16:00:00"),674],
+      [new Date("10/8/2007 16:00:00"),637],
+      [new Date("9/24/2007 16:00:00"),567],
+      [new Date("9/10/2007 16:00:00"),528],
+      [new Date("8/27/2007 16:00:00"),515]]);
+
+       // For some reason, it doesn't work correctly
+       var formatter = new google.visualization.DateFormat({pattern: 'yyyy/MM/dd'});
+        //formatter.format(dataTable, 0);
+
+        // Create and draw the visualization.
+         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(dataTable, {curveType: "function"});   
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='chart_div' style='width: 900px; height: 500px;'></div>
+  </body>
+</html>
