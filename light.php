@@ -12,7 +12,7 @@ die("file not found");
       $time=$time[1];
       $date=explode(":", $date);
       $time=explode(":", $time);
-      $a[$i]='[new Date("'.$date[1]."/".$date[0]."/".$date[2]." ".$time[0].":".$time[1].":".$time[2];
+      $a[$i]='[new Date("'.($date[1]+1)."/".$date[0]."/".$date[2]." ".$time[0].":".$time[1].":".$time[2];
       $a[$i]=$a[$i].'"),'.$data["light"].']';
       $i++;
    }
